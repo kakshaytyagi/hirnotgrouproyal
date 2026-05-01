@@ -16,21 +16,22 @@ function submitForm(e) {
     btn.value = 'Sending...';
     btn.disabled = true;
 
-    fetch("https://formsubmit.co/ajax/info.us@99bigha.com", {
+    // REPLACE THE URL BELOW with your Google Apps Script Web App URL
+    const GOOGLE_SCRIPT_URL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+    fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
+        mode: "no-cors", // Required for Google Apps Script
         headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            phone: phoneInput,
-            _cc: "akshaytyagi3102003@gmail.com, tyagirinkesh@gmail.com",
-            _subject: "New Lead Registration - Hirnot Group Royal",
-            _captcha: "false"
+            phone: phoneInput
         })
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(() => {
+        // Since we use 'no-cors', we won't get a readable response, 
+        // but if the fetch finishes without an error, it usually succeeded.
         btn.value = 'Sent!';
         setTimeout(() => {
             toggle();
