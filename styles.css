@@ -145,8 +145,8 @@ section .imgBx img {
   object-fit: cover;
   z-index: 2;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .action {
@@ -198,7 +198,7 @@ section .imgBx img {
   transform: scale(0);
   transform-origin: left;
   z-index: -1;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .action ul li {
@@ -242,7 +242,7 @@ i {
   opacity: 0;
   transition: .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 0 0 100vh rgba(0, 0, 0, .8);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .newsletter h2 {
@@ -270,9 +270,9 @@ i {
   outline: none;
   width: calc(100% - 150px);
   font-size: 16px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
 }
 
@@ -294,7 +294,7 @@ i {
 }
 
 .newsletter .inputBox input[type='submit']:hover {
-    background: #f4d03f;
+  background: #f4d03f;
 }
 
 .newsletter.popUp {
@@ -322,12 +322,15 @@ i {
     padding: 150px 50px 50px;
     text-align: center;
   }
+
   header {
-      padding: 30px 50px;
+    padding: 30px 50px;
   }
+
   section .imgBx {
     width: 100%;
   }
+
   section .imgBx img {
     margin-top: 40px;
   }
@@ -339,36 +342,49 @@ i {
     flex-direction: column;
     gap: 15px;
   }
+
   section {
     padding: 150px 20px 50px;
   }
+
   section .contentBx h2 {
     font-size: 40px;
   }
+
   .newsletter {
     width: 90%;
     padding: 40px;
   }
+
   .newsletter .inputBox input {
-      width: 100%;
-      margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 15px;
   }
+
   .newsletter .inputBox input[type='submit'] {
-      position: relative;
-      width: 100%;
+    position: relative;
+    width: 100%;
   }
 }
 
 /* Animations and Special Effects */
 #hero-logo {
   animation: float 6s ease-in-out infinite;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .gradient-text {

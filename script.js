@@ -16,21 +16,19 @@ function submitForm(e) {
     btn.value = 'Sending...';
     btn.disabled = true;
 
-    fetch("https://formsubmit.co/ajax/info.us@99bigha.com", {
+    fetch("mail_handler.php", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            phone: phoneInput,
-            _cc: "akshaytyagi3102003@gmail.com, tyagirinkesh@gmail.com",
-            _subject: "New Lead Registration - Hirnot Group Royal",
-            _captcha: "false"
+            phone: phoneInput
         })
     })
-        .then(response => response.json())
-        .then(data => {
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
             btn.value = 'Sent!';
             setTimeout(() => {
                 toggle();
@@ -38,13 +36,16 @@ function submitForm(e) {
                 btn.disabled = false;
                 e.target.reset(); // reset the form
             }, 2000);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            btn.value = 'Error!';
-            setTimeout(() => {
-                btn.value = 'Submit';
-                btn.disabled = false;
-            }, 2000);
-        });
+        } else {
+            throw new Error(data.message || 'Error');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        btn.value = 'Error!';
+        setTimeout(() => {
+            btn.value = 'Submit';
+            btn.disabled = false;
+        }, 2000);
+    });
 }
