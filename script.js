@@ -16,8 +16,8 @@ function submitForm(e) {
     btn.value = 'Sending...';
     btn.disabled = true;
 
-    // REPLACE THE URL BELOW with your Google Apps Script Web App URL
-    const GOOGLE_SCRIPT_URL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
+    // Your Google Apps Script URL
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx5kWWbOF8NUE52fqNrK3IheGfA-q7Zv0lKjTSqxU55Nn-U2aH6oufhVrFbBT9aQy_e6A/exec";
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -30,8 +30,8 @@ function submitForm(e) {
         })
     })
     .then(() => {
-        // Since we use 'no-cors', we won't get a readable response, 
-        // but if the fetch finishes without an error, it usually succeeded.
+        // Since we use 'no-cors', the response isn't readable, 
+        // but success is implied if we reach here.
         btn.value = 'Sent!';
         setTimeout(() => {
             toggle();
