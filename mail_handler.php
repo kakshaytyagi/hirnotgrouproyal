@@ -47,8 +47,8 @@ $headers .= "From: HirnotGroup <info.us@99bigha.com>" . "\r\n";
 $headers .= "Bcc: $to_bcc" . "\r\n";
 
 // Note: Ensure your server is configured to send mail via SMTP 
-// or use PHPMailer for direct SMTP authentication.
-// (Credentials: Host: smtp.hostinger.com | User: info.us@99bigha.com)
+// or use PHPMailer for direct SMTP authentication with:
+// Host: smtp.hostinger.com | User: info.us@99bigha.com | Pass: Ak3102003#
 
 if (mail($to_email, $subject, $html_message, $headers)) {
     echo json_encode(['status' => 'success', 'message' => 'Email sent successfully']);
